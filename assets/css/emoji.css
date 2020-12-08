@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Noto Color Emoji';
+  font-style: normal;
+  font-display: block;
+  src: url("../webfonts/NotoColorEmoji.eot");
+  src: url("../webfonts/NotoColorEmoji.eot?#iefix") format("embedded-opentype"), url("../webfonts/NotoColorEmoji.woff2") format("woff2"), url("../webfonts/NotoColorEmoji.ttf") format("truetype"); 
+}

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-display: block;
+  src: url("../webfonts/Nunito-Regular.eot");
+  src: url("../webfonts/Nunito-Regular.eot?#iefix") format("embedded-opentype"), url("../webfonts/Nunito-Regular.woff2") format("woff2"), url("../webfonts/Nunito-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: bold;
+  font-display: block;
+  src: url("../webfonts/Nunito-ExtraBold.eot");
+  src: url("../webfonts/Nunito-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../webfonts/Nunito-ExtraBold.woff2") format("woff2"), url("../webfonts/Nunito-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: oblique;
+  font-display: block;
+  src: url("../webfonts/Nunito-LightItalic.eot");
+  src: url("../webfonts/Nunito-LightItalic.eot?#iefix") format("embedded-opentype"), url("../webfonts/Nunito-LightItalic.woff2") format("woff2"), url("../webfonts/Nunito-LightItalic.ttf") format("truetype");
+}

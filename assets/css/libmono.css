@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Liberation Mono';
+  font-style: monospace;
+  font-display: block;
+  src: url("../webfonts/LiberationMono-Regular.eot");
+  src: url("../webfonts/LiberationMono-Regular.eot?#iefix") format("embedded-opentype"), url("../webfonts/LiberationMono-Regular.woff2") format("woff2"), url("../webfonts/LiberationMono-Regular.ttf") format("truetype"); 
+}

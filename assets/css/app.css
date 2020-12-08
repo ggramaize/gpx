@@ -1,0 +1,151 @@
+.server_resp {
+	font-family: "Nunito", "Open Sans","Fira Sans","Roboto","Droid Sans",sans-serif;
+	background: #26232a;
+	color: #d4b2f6;
+	padding: 8px;
+	line-height: normal;
+}
+.server_resp p,h1,h2,h3,ul {
+	margin: 0;
+}
+
+.server_resp h1~pre, 
+.server_resp h2~pre, 
+.server_resp h3~pre, 
+.server_resp h1~p, 
+.server_resp h2~p, 
+.server_resp h3~p {
+	padding-left: 1.5em;
+}
+
+/* Dirty hack to fix the lack of :not(:has(>a)) selector */
+.no-lmarg {
+	padding-left: 0 !important;
+}
+
+.server_resp h1,h2,h3 {
+	font-weight: bold;
+}
+
+.server_resp h1 { color: #d4e8f9; }
+.server_resp h2 { color: #b6d7f5; }
+.server_resp h3 { color: #c5e1f7; }
+.server_resp pre { 
+	color: #a3aff3; 
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.server_resp a { 
+	padding-left: 1.5em;
+	color: #f9f9f9; 
+	text-decoration: none; 
+}
+.server_resp a:hover { 	
+	color: #00c0ff; 
+	text-decoration: none; 
+}
+.server_resp a.link-ext:before { 
+	content: "\f7a2";
+	color: #00c0ff; 
+	font-weight: 900;
+	margin-left: -1.3em;
+	width: 1.3em;
+}
+/*mdata: { color: #006080; }*/
+
+.server_resp a.link-gopher:hover { color: #8484ff; }
+.server_resp a.link-gopher:before , 
+.server_resp a:visited.link-gopher:before { 
+	content: "\f7a2"; 
+	color: #ff00ff; 
+	font-weight: 900;
+	margin-left: -1.3em;
+	width: 1.3em;
+}
+/*mdata: { color: #ff00ff; }*/
+
+.server_resp a.link-http:hover,
+.server_resp a.link-mail:hover { 
+	color: #ffc000; 
+}
+
+.server_resp a.link-http:before , 
+.server_resp a:visited.link-http:before { 
+	content: "\f7a2"; 
+	color: #ffc000; 
+	font-weight: 900;
+	margin-left: -1.3em;
+	width: 1.3em;
+}
+/*mdata: { color: #6a5000; }*/
+
+.server_resp a.link-mail:before { 
+	content: "\f0e0"; 
+	color: #ffc000; 
+	font-weight: 900;
+	margin-left: -1.3em;
+	width: 1.3em;
+}
+/*mdata: { color: #6a5000; }*/
+
+.server_resp a.link-other:before { 
+	content: "\f7a2"; 
+	color: #ff4040; 
+	font-weight: 900;
+	margin-left: -1.3em;
+	width: 1.3em;
+}
+
+.server_resp a:before {
+	content: "\f105";
+	color: #00c0ff;
+	display: inline-block;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	margin-left: -1.1em;
+	width: 1.1em;
+}
+.server_resp a:visited:before {
+	content: "\f105";
+	color: #006080;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	display: inline-block;
+	margin-left: -1.1em;
+	width: 1.1em;
+}
+
+.server_resp ul {
+	padding-left: 1.5em;
+	list-style-type: none;
+}
+
+.server_resp li:before {
+	content: "\f22d";
+	color: #aab7ff;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	display: inline-block;
+	margin-left: -1.1em;
+	width: 1.1em;
+}
+
+.quote-block {
+	padding-left: 1.5em;
+	color: #aab7ff;
+	font-style: oblique;
+}
+
+.quote-block:before {
+	content: "\f10d";
+	font-family: 'Font Awesome 5 Free';
+	font-style: normal;
+	font-weight: 900;
+	margin-left: -1.4em;
+	margin-bottom: -1.2em;
+	width:1.3em;
+	display: block;
+	color: #616589;
+}
+
