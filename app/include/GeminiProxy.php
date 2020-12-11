@@ -12,7 +12,7 @@ class GeminiProxy implements IRequestProxy
 	private $client_pass = null;
 
 	// The connection timeout (in seconds)
-	private $connect_timeout = 10;
+	private $connect_timeout = 4;
 
 	// The delay after which we give up fetching the content
 	private $content_timeout = 10;
@@ -118,7 +118,8 @@ class GeminiProxy implements IRequestProxy
 		$conn_ctx = stream_context_create( $conn_opts);
 
 		// Connect to server
-		$socket = stream_socket_client(	
+		// We need to mute the function, since connection failures generate a warning, which we handle later
+		$socket = @stream_socket_client(
 			$tls_target, 
 			$errno, 
 			$errstr, 
@@ -145,14 +146,30 @@ class GeminiProxy implements IRequestProxy
 		$result['srv_cert_fprint'] = openssl_x509_fingerprint( $tls_metadata['options']['ssl']['peer_certificate'], 'sha256');
 		$result['srv_cert_fprint_b64'] = base64_encode( pack( 'H*', $result['srv_cert_fprint']));
 
+		// Set the application timer
+		stream_set_timeout( $socket, $this->content_timeout);
+
 		// Send request URL to socket
 		fwrite( $socket, "$url\r\n");
 		fflush( $socket);
 
 		// Retrieve the result
-		// TODO: handle content timeout
 		$response = stream_get_contents( $socket);
+
+		// Retrieve the metadata to check if we timed out
+		$conn_metadata = stream_get_meta_data( $socket);
+
+		// Close the connection
 		fclose( $socket);
+
+		// Handle Application Timeout
+		if( isset( $conn_metadata['timed_out']) && $conn_metadata['timed_out'] )
+		{
+			$result['proxy_conn_success'] = false;
+			$result['errno'] = 62; // ETIME
+			$result['errstr'] = 'Application timed out while sending response';
+			return $result;
+		}
 
 		// Parse the result
 		list( $result['header'], $result['content']) = explode("\n", $response, 2);
