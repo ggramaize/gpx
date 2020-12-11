@@ -1,3 +1,8 @@
+body {
+	margin: 0;
+	background: #26232a;
+}
+
 .server_resp {
 	font-family: "Nunito", "Open Sans","Fira Sans","Roboto","Droid Sans",sans-serif;
 	background: #26232a;
@@ -5,8 +10,26 @@
 	padding: 8px;
 	line-height: normal;
 }
+
+.server_resp ::selection {
+	background-color: #5b4b2a;
+}
+
+.browser_diag {
+	margin-top: 2.5em;
+	margin-left: auto;
+	margin-right: auto;
+	width: 65%;
+}
+
 .server_resp p,h1,h2,h3,ul {
 	margin: 0;
+}
+
+.server_resp input.form-control {
+	background: transparent;
+	border-color: #29aa61;
+	color: #5bd487;
 }
 
 .server_resp h1~pre, 
