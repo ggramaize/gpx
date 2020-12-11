@@ -55,8 +55,8 @@ class Gemdoc {
 	public static function escape_str( $str)
 	{
 		return str_replace( 
-			array( '<', '>', '&'), 
-			array( '&lt;', '&gt;', '&amp;'), 
+			array( '&', '<', '>'), 
+			array( '&amp;' ,'&lt;', '&gt;'), 
 			$str
 		);
 	}
@@ -96,6 +96,13 @@ class Gemdoc {
 				// Cross-protocol link coloring
 				if( !empty($matches[1]) )
 				{
+					// If we detect an obviously invalid character, make an unbrowsable link.
+					if( strpos( $matches[1], '<') !== false || strpos( $matches[1], '>') !== false || strpos( $matches[1], '#') !== false )
+					{
+						$matches[2] = $matches[1] . ($matches[2] ?? '');
+						$matches[1] = '#';
+					}
+
 					$url_attrs = parse_url($matches[1]);
 					if( !empty($url_attrs['scheme']) )
 					{
@@ -153,7 +160,7 @@ class Gemdoc {
 			}
 
 			// Quotes
-			if( $this->not_in_prefmt() && preg_match( '/>\s*(.*)/', $l, $matches) == 1 )
+			if( $this->not_in_prefmt() && preg_match( '/^>\s*(.*)/', $l, $matches) == 1 )
 			{
 				$this->close_list();
 				$this->open_quote();
@@ -195,8 +202,9 @@ class Gemdoc {
 
 				// Escape special characters
 				$content = self::escape_str( trim( $l) );
+				//$content = trim( $l);
 
-				if( empty($content) )
+				if( empty($content) || $content == '=>' )
 					$this->out .= "<p>&nbsp;</p>\n";
 				else
 					$this->out .= "<p>$content</p>\n";
