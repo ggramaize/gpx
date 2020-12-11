@@ -1,0 +1,69 @@
+
+{
+	"error_pages": {
+		"10": { "icon":    "", 
+			"title":   "", 
+			"details": "" 
+		},
+		"11": { "icon":    "", 
+			"title":   "", 
+			"details": "" 
+		},
+		"40": { "icon":    "fas fa-exclamation-triangle text-warning", 
+			"title":   "Temporary failure", 
+			"details": "<p>The request has failed. Identical requests may succeed in the future.</p>" 
+		},
+		"41": { "icon":    "fas fa-dumpster-fire text-warning", 
+			"title":   "Server unavailable", 
+			"details": "<p>The server is unavailable due to overload or maintenance.</p>" 
+		},
+		"42": { "icon":    "fas fa-poo-storm text-warning", 
+			"title":   "CGI Error", 
+			"details": "<p>A dynamic content generator died unexpectedly or timed out.</p>" 
+		},
+		"43": { "icon":    "fas fa-exclamation-triangle text-warning", 
+			"title":   "Proxy Error", 
+			"details": "<p>The server was unable to complete a transaction with the remote host.</p>" 
+		},
+		"44": { "icon":    "", 
+			"title":   "", 
+			"details": "" 
+		},
+		"50": { "icon":    "fas fa-ban text-danger", 
+			"title":   "Permanent error", 
+			"details": "<p>The request has failed. The nature of the failure is permanent (identical requests will fail for the same reason).</p>" 
+		},
+		"51": { "icon":    "fas fa-search text-warning", 
+			"title":   "Not found", 
+			"details": "<p>The requested resource could not be found at this time.</p>" 
+		},
+		"52": { "icon":    "fas fa-book-dead text-danger", 
+			"title":   "Gone", 
+			"details": "<p>The resource requested is no longer available and will not be available again.</p>" 
+		},
+		"53": { "icon":    "fas fa-times-circle text-danger", 
+			"title":   "Proxy request refused", 
+			"details": "<p>The request was for a resource at a domain not served by the server and the server does not accept proxy requests.</p>" 
+		},
+		"59": { "icon":    "fas fa-ban text-danger", 
+			"title":   "Bad Request", 
+			"details": "<p>The server was unable to parse the client's request.</p>" 
+		},
+		"60": { "icon":    "fas fa-id-card text-primary", 
+			"title":   "Client certificate required", 
+			"details": "" 
+		},
+		"61": { "icon":    "", 
+			"title":   "", 
+			"details": "" 
+		},
+		"62": { "icon":    "", 
+			"title":   "", 
+			"details": "" 
+		}
+
+	}
+
+}
+
+
