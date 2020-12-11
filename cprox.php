@@ -64,13 +64,21 @@ function process_request( $url)
 			// only trigger conversion for text/gemini documents
 			list($status, $meta) = explode( ' ', $result['header'], 2);
 
-			if( $status >= 20 && $status <= 29 && preg_match( '/^text\/gemini/', $meta) == 1)
+			if( $status >= 20 && $status <= 29)
 			{
-				$gemdoc = new Gemdoc();
-				$reply['content'] = $gemdoc->to_html($result['content'], $revprox_host);
+				// Convert non UTF-8 content
+				if( preg_match( '/charset=([A-Za-z0-9\-]+)/', $meta, $encoding) == 1 )
+					if( $encoding[1] != "UTF-8" && $encoding[1] != 'utf-8')
+						$result['content'] = iconv( $encoding[1], 'UTF-8', $result['content']);
+
+				if( preg_match( '/^text\/gemini/', $meta) == 1)
+				{
+					$gemdoc = new Gemdoc();
+					$reply['content'] = $gemdoc->to_html($result['content'], $revprox_host);
+				}
+				else
+					$reply['content'] = $result['content'];
 			}
-			else
-				$reply['content'] = $result['content'];
 		}
 	}
 
@@ -79,7 +87,7 @@ function process_request( $url)
 
 if( !empty( $_GET['url'] ) )
 {
-	$result = json_encode( process_request( $_GET['url']) );
+	$result = json_encode( process_request( $_GET['url']));
 }
 else
 	$result = json_encode( (object) array( 'prx_status' => 'noop' ));
