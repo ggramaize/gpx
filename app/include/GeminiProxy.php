@@ -80,7 +80,7 @@ class GeminiProxy implements IRequestProxy
 			'ssl' => array(
 				// TLS Server options
 				'capath' => '/etc/ssl/certs',
-				'verify_peer' => true,
+				'verify_peer' => false,
 				'verify_peer_name' => true,
 				'allow_self_signed' => true,
 				'security_level' => '2',
