@@ -192,6 +192,9 @@ readers do not read off random characters that represent icons */
 .fa-500px:before {
   content: "\f26e"; }
 
+.fa-angle-double-right:before {
+  content: "\f101"; }
+
 .fa-angle-right:before {
   content: "\f105"; }
 
@@ -206,6 +209,9 @@ readers do not read off random characters that represent icons */
 
 .fa-bars:before {
   content: "\f0c9"; }
+
+.fa-cogs:before {
+  content: "\f085"; }
 
 .fa-book-dead:before {
   content: "\f6b7"; }
@@ -251,6 +257,9 @@ readers do not read off random characters that represent icons */
 
 .fa-minus-circle:before {
   content: "\f056"; }
+
+.fa-network-wired:before {
+  content: "\f6ff"; }
 
 .fa-poo-storm:before {
   content: "\f75a"; }

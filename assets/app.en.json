@@ -1,65 +1,86 @@
 
 {
-	"error_pages": {
-		"10": { "icon":    "", 
-			"title":   "", 
-			"details": "" 
-		},
-		"11": { "icon":    "", 
-			"title":   "", 
-			"details": "" 
-		},
-		"40": { "icon":    "fas fa-exclamation-triangle text-warning", 
+	"about":{
+		"blank": "",
+		"license": "<h1>Gemini web proxy</h1>",
+		"start": ""
+	},
+	"screens": {
+		"err40": { "icon":    "fas fa-exclamation-triangle text-warning", 
 			"title":   "Temporary failure", 
 			"details": "<p>The request has failed. Identical requests may succeed in the future.</p>" 
 		},
-		"41": { "icon":    "fas fa-dumpster-fire text-warning", 
+		"err41": { "icon":    "fas fa-dumpster-fire text-warning", 
 			"title":   "Server unavailable", 
 			"details": "<p>The server is unavailable due to overload or maintenance.</p>" 
 		},
-		"42": { "icon":    "fas fa-poo-storm text-warning", 
+		"err42": { "icon":    "fas fa-poo-storm text-warning", 
 			"title":   "CGI Error", 
 			"details": "<p>A dynamic content generator died unexpectedly or timed out.</p>" 
 		},
-		"43": { "icon":    "fas fa-exclamation-triangle text-warning", 
+		"err43": { "icon":    "fas fa-exclamation-triangle text-warning", 
 			"title":   "Proxy Error", 
 			"details": "<p>The server was unable to complete a transaction with the remote host.</p>" 
 		},
-		"44": { "icon":    "", 
+		"err44": { "icon":    "", 
 			"title":   "", 
 			"details": "" 
 		},
-		"50": { "icon":    "fas fa-ban text-danger", 
+		"err50": { "icon":    "fas fa-ban text-danger", 
 			"title":   "Permanent error", 
 			"details": "<p>The request has failed. The nature of the failure is permanent (identical requests will fail for the same reason).</p>" 
 		},
-		"51": { "icon":    "fas fa-search text-warning", 
+		"err51": { "icon":    "fas fa-search text-warning", 
 			"title":   "Not found", 
 			"details": "<p>The requested resource could not be found at this time.</p>" 
 		},
-		"52": { "icon":    "fas fa-book-dead text-danger", 
+		"err52": { "icon":    "fas fa-book-dead text-danger", 
 			"title":   "Gone", 
 			"details": "<p>The resource requested is no longer available and will not be available again.</p>" 
 		},
-		"53": { "icon":    "fas fa-times-circle text-danger", 
+		"err53": { "icon":    "fas fa-times-circle text-danger", 
 			"title":   "Proxy request refused", 
 			"details": "<p>The request was for a resource at a domain not served by the server and the server does not accept proxy requests.</p>" 
 		},
-		"59": { "icon":    "fas fa-ban text-danger", 
+		"err59": { "icon":    "fas fa-ban text-danger", 
 			"title":   "Bad Request", 
 			"details": "<p>The server was unable to parse the client's request.</p>" 
 		},
-		"60": { "icon":    "fas fa-id-card text-primary", 
+		"err60": { "icon":    "fas fa-id-card text-primary", 
 			"title":   "Client certificate required", 
-			"details": "" 
+			"details": "<p>Access to the requested resource requires a client certificate. If the request was made without a certificate, it should be repeated with one. If the request was made with a certificate, the server did not accept it and the request should be repeated with a different certificate.</p>" 
 		},
-		"61": { "icon":    "", 
-			"title":   "", 
-			"details": "" 
+		"err61": { "icon":    "fas fa-ban text-danger", 
+			"title":   "Certificate not authorized", 
+			"details": "<p>The supplied client certificate is not authorised to access the requested resource.</p>" 
 		},
-		"62": { "icon":    "", 
-			"title":   "", 
-			"details": "" 
+		"err62": { "icon":    "fas fa-ban text-danger", 
+			"title":   "Certificate not valid", 
+			"details": "<p>The certificate is either not satisfying usage constraints, is not yet valid or expired.</p>" 
+		},
+		"rdir":{"icon":    "fas fa-angle-double-right text-warning", 
+			"title":   "Too many redirects", 
+			"details": "<p>You may be stuck in a redirect loop.</p><p>&nbsp;</p><a id=\"recover-tmrdir\" href=\"#\">Go back to the last known good page</a>"
+		},
+		"errAppTmt":{"icon":  "fas fa-cogs text-warning", 
+			"title":   "Remote Application timeout", 
+			"details": "<p>The remote application timed out before sending the response.</p><p>&nbsp;</p>"
+		},
+		"errCnnTmt":{"icon":  "fas fa-network-wired text-warning", 
+			"title":   "Connection failed", 
+			"details": "<p>Failed to connect to the remote server.</p><p>&nbsp;</p>"
+		},
+		"errPxy":{"icon":  "fas fa-network-wired text-warning", 
+			"title":   "Backend error error", 
+			"details": "<p>Our proxy failed to serve your request. Error details may follow.</p><p>&nbsp;</p>"
+		},
+		"xproto":{"icon":  "fas fa-globe-europe text-warning", 
+			"title":   "Scheme-changing redirect", 
+			"details": "<p>The server attempted to redirect us to a URL whose scheme is different than the originating URL's scheme. Here is the link so you can open it manually if appropriate.</p><p>&nbsp;</p><p><a href=\"#\" id=\"next-xproto\" target=\"_blank\">Visit the target link</a></p><p><a href=\"#\" id=\"recover-xproto\">Go back to the last known good page</a></p>"
+		},
+		"errWild": { "icon":   "fas fa-poo-storm text-warning",
+			 "title":  "Unknown error",
+			 "details": "<p>The remote server has raised a non-standard error code.</p><p>&nbsp;</p>"
 		}
 
 	}
