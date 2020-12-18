@@ -140,6 +140,10 @@ class Gemdoc {
 					$this->out .= '<p class="no-lmarg">';
 					$this->out .= '<a class="'.$schm_class.'" href="'.$matches[1].'" rel="nofollow">'.$matches[1].'</a></p>'."\n";
 				}
+
+				// Clear the variable to avoid inter-iteration leakage
+				unset( $schm_class);
+				
 				$this->status = self::OUT_DEFAULT;
 				continue;
 			}
